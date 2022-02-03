@@ -290,7 +290,7 @@ public:
             MuTeCUtils::alert(notification.str(), output_colour::KBLU);
             myRewriter.setSourceMgr(ci.getSourceManager(), ci.getLangOpts());
             context = &ci.getASTContext();
-            return llvm::make_unique<ASTConsumerForSourceCodeInvastigator>(myRewriter);
+            return std::make_unique<ASTConsumerForSourceCodeInvastigator>(myRewriter);
         }
 
 private:
